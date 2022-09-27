@@ -6,7 +6,7 @@ public class Banco {
     private String nome;
     private List<Conta> contas;
 
-
+//geters e seters------------------------------
     public String getNome() {
 
         return nome;

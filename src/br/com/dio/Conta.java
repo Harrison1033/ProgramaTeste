@@ -1,5 +1,5 @@
 package br.com.dio;
-
+//Implements do iconta -------------------------------
 public abstract class Conta implements IConta {
     private static final int AGENCIA_PADRAO = 111;
     private static int SEQUENCIAL = 1111;
@@ -14,7 +14,7 @@ public abstract class Conta implements IConta {
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
     }
-
+//sobreescrever saque, deposito e transferencia---------------------------
     @Override
     public void sacar(double valor) {
         saldo -= valor;
@@ -30,7 +30,7 @@ public abstract class Conta implements IConta {
         this.sacar(valor);
         contaDestino.depositar(valor);
     }
-
+//Geters-------------------------------------------------------------------
     public int getAgencia() {
         return agencia;
     }
@@ -42,11 +42,11 @@ public abstract class Conta implements IConta {
     public double getSaldo() {
         return saldo;
     }
-
+//Protect imprimir informações comuns (super para conta corrente e poupança)
     protected void imprimirInfosComuns() {
-        System.out.println(String.format("Titular: %s", this.cliente.getNome()));
-        System.out.println(String.format("Agencia: %d", this.agencia));
-        System.out.println(String.format("Numero: %d", this.numero));
-        System.out.println(String.format("Saldo: %.2f", this.saldo));
+        System.out.printf("Titular: %s%n", this.cliente.getNome());
+        System.out.printf("Agencia: %d%n", this.agencia);
+        System.out.printf("Numero: %d%n", this.numero);
+        System.out.printf("Saldo: %.2f%n", this.saldo);
     }
 }

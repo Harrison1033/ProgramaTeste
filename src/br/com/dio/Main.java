@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Cliente clienteBanco = new Cliente();
+        Cliente clienteBanco = new Cliente();//referente a classe cliente.
         Scanner scan = new Scanner(System.in);
         clienteBanco.setNome("Harrison");
         String opc;
